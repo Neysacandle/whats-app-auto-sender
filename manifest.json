@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Auto Sender",
+  "version": "1.0",
+  "description": "Send WhatsApp messages automatically using Excel file.",
+  "permissions": ["scripting", "activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://web.whatsapp.com/*"
+  ]
+}
